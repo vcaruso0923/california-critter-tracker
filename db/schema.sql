@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS california_critter_tracker_db;
+CREATE DATABASE california_critter_tracker_db;
