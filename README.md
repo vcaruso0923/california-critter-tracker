@@ -38,7 +38,7 @@ Languages:
 
 ## LICENSE
 Accords to __MIT__ licensing.
->&copy; 2020 by STV
+>&copy; 2020 by ASTV
 
 ## QUESTIONS
 For further inquiries, connect with [franamaus](https://github.com/franamaus) or write to [theresanguyen.vmt@gmail.com](mailto:theresanguyen.vmt@gmail.com).

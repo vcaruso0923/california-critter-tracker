@@ -1,7 +1,8 @@
 async function editFormHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector('select[name="type"]').value;
+    const type = document.querySelector('select[name="type"]').value;
+    const location = document.querySelector('select[name="location"]').value;
 
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
@@ -10,7 +11,8 @@ async function editFormHandler(event) {
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            type
+            type,
+            location
         }),
         headers: {
             'Content-Type': 'application/json'
