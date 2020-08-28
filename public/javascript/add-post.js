@@ -5,7 +5,7 @@ async function newFormHandler(event) {
     const type = document.querySelector('select[name="type"]').value;
     const location = document.querySelector('select[name="location"]').value;
 
-    const response = await fetch(`/api/post-routes`, {
+    const response = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({
             type,
