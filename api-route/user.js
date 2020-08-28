@@ -1,18 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Vote, Comment } = require("../../models");
-
-// GET /api/users
-router.get('/', (req, res) => {
-    // Access our User model and run .findAll() method)
-    User.findAll({
-        attributes: { exclude: ['password'] }
-    })
-        .then(dbUserData => res.json(dbUserData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+const { User, Post} = require("../../models");
 
 // GET /api/users/1
 router.get('/:id', (req, res) => {
@@ -20,22 +7,9 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Post,
-                attributes: ['id', 'title', 'post_text', 'created_at']
+                attributes: ['id', 'location', 'type', 'created_at']
             },
-            {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'created_at'],
-                include: {
-                    model: Post,
-                    attributes: ['title']
-                }
-            },
-            {
-                model: Post,
-                attributes: ['title'],
-                through: Vote,
-                as: 'voted_posts'
-            }
+
         ],
         attributes: { exclude: ['password'] },
         where: {

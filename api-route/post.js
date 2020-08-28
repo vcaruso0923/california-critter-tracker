@@ -1,27 +1,18 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, User, Vote, Comment } = require('../../models');
+const { Post, User } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
-            'post_text',
-            'title',
+            'location',
+            'type',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         order: [['created_at', 'DESC']],
         include: [
-            {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
             {
                 model: User,
                 attributes: ['username']
@@ -42,20 +33,11 @@ router.get('/:id', (req, res) => {
         },
         attributes: [
             'id',
-            'post_text',
-            'title',
+            'location',
+            'type',
             'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         ],
         include: [
-            {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
             {
                 model: User,
                 attributes: ['username']
@@ -76,10 +58,10 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // expects {title: 'Taskmaster goes public!', post_text: 'https://taskmaster.com/press', user_id: 1}
+
     Post.create({
-        title: req.body.title,
-        post_text: req.body.post_text,
+        location: req.body.location,
+        type: req.body.type,
         user_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
@@ -89,25 +71,11 @@ router.post('/', (req, res) => {
         });
 });
 
-// PUT /api/posts/upvote
-router.put('/upvote', (req, res) => {
-    // make sure the session exists first
-    if (req.session) {
-        // pass session id along with all destructured properties on req.body
-        Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-            .then(updatedVoteData => res.json(updatedVoteData))
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    }
-});
-
 router.put('/:id', (req, res) => {
     Post.update(
         {
-            title: req.body.title,
-            post_text: req.body.post_text
+            location: req.body.location,
+            type: req.body.type,
         },
         {
             where: {
