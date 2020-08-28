@@ -2,7 +2,7 @@ async function newFormHandler(event) {
     event.preventDefault();
   
     // variable to capture input from drop down
-    const species = document.querySelector('select[name="species"]').value;
+    const species = document.querySelector('select[name="type"]').value;
     const location = document.querySelector('select[name="location"]').value;
   
     const response = await fetch(`/api/posts`, {
