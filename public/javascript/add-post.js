@@ -2,10 +2,10 @@ async function newFormHandler(event) {
     event.preventDefault();
 
     // variable to capture input from drop down
-    const species = document.querySelector('select[name="type"]').value;
+    const type = document.querySelector('select[name="type"]').value;
     const location = document.querySelector('select[name="location"]').value;
 
-    const response = await fetch(`/api/post-routes`, {
+    const response = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({
             type,
