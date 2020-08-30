@@ -1,4 +1,7 @@
-<a href="/search">Search by location and/or species</a>
+<form>
+    {{> form }}
+    <button type="submit" class="btn">Search</button>
+</form>
 
 <ol class="post-list">
     {{#each posts as |post|}}
