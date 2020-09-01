@@ -1,16 +1,16 @@
 <section>
     <h2>Create New Post</h2>
 
-    <form class="new-post-form">
+    <form class="new-post-form pure-form pure-form-stacked">
         {{> form }}
-        <button type="submit" class="btn">Create Post</button>
+        <button type="submit" class="btn pure-button">Create Post</button>
     </form>
 </section>
 
 {{#if posts.length}}
 <section>
     <h2>Your Posts</h2>
-    <ol>
+    <ol class="style-list">
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}

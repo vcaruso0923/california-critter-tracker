@@ -1,1 +1,18 @@
 /* Nothing yet! */
+
+.footer {
+    background: #111;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    padding: 20px
+}
+
+.footer-off-set {
+    padding: 30px;
+}
+
+.style-list {
+    list-style: none;
+}
