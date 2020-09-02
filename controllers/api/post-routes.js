@@ -4,6 +4,33 @@ const { Post, User } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
+    if (req) {
+        Post.findAll({
+            // where: {
+            //     type: req.query.type,
+            //     location: req.query.location
+            // },
+            where: req.query,
+            attributes: [
+                'id',
+                'location',
+                'type',
+                'created_at'
+            ],
+            order: [['created_at', 'DESC']],
+            // include: [
+            //     {
+            //         model: User,
+            //         attributes: ['user_id']
+            //     }
+            // ]
+        })
+            .then(dbPostData => res.json(dbPostData))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
     Post.findAll({
         attributes: [
             'id',
@@ -56,6 +83,34 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+router.get('/?'), (req, res) => {
+    console.log(req);
+    Post.findAll({
+        where: {
+            type: req.query.type,
+            location: req.query.location
+        },
+        attributes: [
+            'id',
+            'location',
+            'type',
+            'created_at'
+        ],
+        order: [['created_at', 'DESC']],
+        // include: [
+        //     {
+        //         model: User,
+        //         attributes: ['user_id']
+        //     }
+        // ]
+    })
+        .then(dbPostData => res.json(dbPostData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+}
 
 router.post('/', (req, res) => {
 
