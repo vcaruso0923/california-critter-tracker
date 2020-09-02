@@ -98,12 +98,12 @@ router.get('/?'), (req, res) => {
             'created_at'
         ],
         order: [['created_at', 'DESC']],
-        // include: [
-        //     {
-        //         model: User,
-        //         attributes: ['user_id']
-        //     }
-        // ]
+        include: [
+            {
+                model: User,
+                attributes: ['user_id']
+            }
+        ]
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {

@@ -12,7 +12,7 @@ async function searchFormHandler(event) {
 
     console.log(searchObject)
 
-    let queryUrl = '/api/posts/?';
+    let queryUrl = '/search/?';
 
     // searchObject will be passed through the Object.entries() method to create query parameters
     Object.entries(searchObject).forEach(([key, value]) => {
@@ -44,4 +44,4 @@ async function searchFormHandler(event) {
         })
 }
 
-document.querySelector('.search-form').addEventListener('submit', searchFormHandler);
+// document.querySelector('.search-form').addEventListener('submit', searchFormHandler);

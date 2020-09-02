@@ -42,11 +42,6 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-//search results render
-router.get('/search', (req, res) => {
-    res.render('search');
-})
-
 router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {

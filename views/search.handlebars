@@ -1,9 +1,9 @@
-<form class="pure-form pure-form-stacked search-form">
+<form class="pure-form pure-form-stacked search-form" action="/search" method="GET">
     {{> form }}
     <button type="submit" class="btn pure-button">Search</button>
 </form>
 
-<ol class="post-list">
+<ol class="post-list style-list">
     {{#each posts as |post|}}
     <li>
         {{> post-info post }}
