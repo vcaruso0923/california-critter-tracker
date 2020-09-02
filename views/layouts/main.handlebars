@@ -3,32 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>California Critter Tracker</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>
-                <a href="/">California Critter Tracker</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <a href="/dashboard">dashboard</a>
-                <button id="logout" class="btn-no-style">Logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                {{/if}}
-            </nav>
-        </header>
-        <main>
+    <div class="pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading" href="/">California Critter Tracker</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item">
+                <a href="/search" class="pure-menu-link pure-button">Search by location and/or species</a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link pure-button" href="/">Home</a>
+            </li>
+            {{#if loggedIn}}
+            <li class="pure-menu-item">
+                <a class="pure-menu-link pure-button" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="pure-menu-item">
+                <button id="logout" class="pure-menu-link pure-button">Logout</button>
+            </li>
+            {{else}}
+            <li class="pure-menu-item">
+                <a class="pure-menu-link pure-button" href="/login">Login</a>
+            </li>
+            {{/if}}
+        </ul>
+    </div>
+    <main>
+        <div class="l-content">
             {{{ body }}}
-        </main>
-        <footer>
-            Made with Love by Theresa, Afzal, Sagat, and Vince
-        </footer>
+        </div>
+    </main>
+    <div class="footer-off-set"> </div>
+    <div class="footer l-box is-center">
+        Made with Love by Theresa, Afzal, Sagat, and Vince
     </div>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
