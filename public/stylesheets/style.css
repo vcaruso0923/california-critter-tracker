@@ -16,3 +16,10 @@
 .style-list {
     list-style: none;
 }
+
+.footer a {
+    color: white;
+}
+.footer a:hover {
+    color: gainsboro;
+}
