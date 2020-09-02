@@ -34,7 +34,9 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
     } else {
-        res.render('search')
+        res.render('search', {
+            loggedIn: req.session.loggedIn
+        });
     }
 });
 
