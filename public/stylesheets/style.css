@@ -29,16 +29,21 @@ body {
 
 }
 
-.pure-menu-list {
-    width: 444px;
+.nav-wrapper {
+    width: 100%;
     position: absolute;
-    left: 50%;
-    content: "";
-    background-color: #ffffff;
-    overflow: hidden;
-    margin-top: 90px;
-    margin-left: -222px;
+    align-items: center;
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.pure-menu-list {
+    width: 80%;
+    position: absolute;
+    background-color: #ffffff;
+    margin-top: 90px;
+    display: flex !important; /* needed to overwrite pure-min.css */
+    justify-content: center;
     border: 1px solid #ccc;
     border-width: 1px 0;
 
@@ -46,13 +51,15 @@ body {
 
 .pure-menu-item {
     display: block;
-    float: none;
+    float: left;
 }
 
 .pure-menu-link {
-    display: inline-block;
+    display: flex;
     float: none;
     color: #2B3A00;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
