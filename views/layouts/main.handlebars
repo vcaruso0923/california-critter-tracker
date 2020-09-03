@@ -13,7 +13,12 @@
 
 <body>
     <div class="pure-menu pure-menu-horizontal">
-        <a class="pure-menu-heading" href="/">California Critter Tracker</a>
+        <!-- logo -->
+        <div class="logo">
+            <a class="pure-menu-heading" href="/"><img class="pure-img" src="/images/cct_logo.png" width="300" height="106" alt="CCT Logo"></a>
+        </div>
+        <!-- nav -->
+        <div class-"nav">
         <ul class="pure-menu-list">
             <li class="pure-menu-item">
                 <a href="/search" class="pure-menu-link pure-button">Search by location and/or species</a>
@@ -34,7 +39,9 @@
             </li>
             {{/if}}
         </ul>
+        </div>
     </div>
+    <div class="hero"></div>
     <main>
         <div class="l-content">
             {{{ body }}}
