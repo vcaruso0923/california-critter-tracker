@@ -21,21 +21,21 @@
         <div class-"nav">
         <ul class="pure-menu-list">
             <li class="pure-menu-item">
-                <a href="/search" class="pure-menu-link pure-button">Search by location and/or species</a>
+                <a class="pure-menu-link" href="/">Home</a>
             </li>
             <li class="pure-menu-item">
-                <a class="pure-menu-link pure-button" href="/">Home</a>
+                <a href="/search" class="pure-menu-link">Search by Location and/or Species</a>
             </li>
             {{#if loggedIn}}
             <li class="pure-menu-item">
-                <a class="pure-menu-link pure-button" href="/dashboard">Dashboard</a>
+                <a class="pure-menu-link" href="/dashboard">Dashboard</a>
             </li>
             <li class="pure-menu-item">
-                <button id="logout" class="pure-menu-link pure-button">Logout</button>
+                <button id="logout" class="pure-menu-link">Logout</button>
             </li>
             {{else}}
             <li class="pure-menu-item">
-                <a class="pure-menu-link pure-button" href="/login">Login</a>
+                <a class="pure-menu-link" href="/login">Login</a>
             </li>
             {{/if}}
         </ul>
