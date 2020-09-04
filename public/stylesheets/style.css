@@ -106,7 +106,7 @@ main {
     background-color: #eeeeee;
 }
 
-div .centered {
+/* div .centered {
     align-items: center;
     text-align: center;
 }
@@ -114,7 +114,7 @@ div .centered {
 select .centered {
     align-items: center;
     text-align: center;
-}
+} */
 
 .footer {
     background: #111;
