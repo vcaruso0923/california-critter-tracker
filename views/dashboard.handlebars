@@ -12,7 +12,7 @@
     <h2><u><center>Your Posts</center></u></h2>
     <ol class="style-list">
         {{#each posts as |post|}}
-        <li>
+        <li class="post-style">
             {{> post-info post}}
             <a href="/dashboard/edit/{{post.id}}" class="edit-link pure-button">Edit post</a>
         </li>

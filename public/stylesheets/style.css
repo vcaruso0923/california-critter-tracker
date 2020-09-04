@@ -144,3 +144,8 @@ select .centered {
 .footer a:hover {
     color: gainsboro;
 }
+
+.post-style {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
