@@ -4,22 +4,25 @@ async function newFormHandler(event) {
     // variable to capture input from drop down
     const type = document.querySelector('select[name="type"]').value;
     const location = document.querySelector('select[name="location"]').value;
-
-    const response = await fetch(`/api/posts`, {
-        method: 'POST',
-        body: JSON.stringify({
-            type,
-            location
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-
-    if (response.ok) {
-        document.location.replace('/dashboard');
+    if (type === "" || location === "") {
+        window.alert("Please enter species and location!")
     } else {
-        alert(response.statusText);
+        const response = await fetch(`/api/posts`, {
+            method: 'POST',
+            body: JSON.stringify({
+                type,
+                location
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            document.location.replace('/dashboard');
+        } else {
+            alert(response.statusText);
+        }
     }
 }
 

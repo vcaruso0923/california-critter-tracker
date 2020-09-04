@@ -13,28 +13,35 @@
 
 <body>
     <div class="pure-menu pure-menu-horizontal">
-        <a class="pure-menu-heading" href="/">California Critter Tracker</a>
+        <!-- logo -->
+        <div class="logo">
+            <a class="pure-menu-heading" href="/"><img class="pure-img" src="/images/cct_logo.png" alt="CCT Logo"></a>
+        </div>
+        <!-- nav -->
+        <div class-"nav-wrapper"  style="display: flex; justify-content: center">
         <ul class="pure-menu-list">
             <li class="pure-menu-item">
-                <a href="/search" class="pure-menu-link pure-button">Search by location and/or species</a>
+                <a class="pure-menu-link" href="/">Home</a>
             </li>
             <li class="pure-menu-item">
-                <a class="pure-menu-link pure-button" href="/">Home</a>
+                <a href="/search" class="pure-menu-link">Search by Location and/or Species</a>
             </li>
             {{#if loggedIn}}
             <li class="pure-menu-item">
-                <a class="pure-menu-link pure-button" href="/dashboard">Dashboard</a>
+                <a class="pure-menu-link" href="/dashboard">Dashboard</a>
             </li>
             <li class="pure-menu-item">
-                <button id="logout" class="pure-menu-link pure-button">Logout</button>
+                <a id="logout" class="pure-menu-link">Logout</a>
             </li>
             {{else}}
             <li class="pure-menu-item">
-                <a class="pure-menu-link pure-button" href="/login">Login</a>
+                <a class="pure-menu-link" href="/login">Login</a>
             </li>
             {{/if}}
         </ul>
+        </div>
     </div>
+    <div class="hero"></div>
     <main>
         <div class="l-content">
             {{{ body }}}
@@ -42,10 +49,11 @@
     </main>
     <div class="footer-off-set"> </div>
     <div class="footer l-box is-center">
-        If you would like to support California's wildlife, consider making a donation to the 
+        <p>If you would like to support California's wildlife, consider making a donation to: <br> 
         <a href="https://cawildlife.org/ways-to-support-us/make-a-general-donation/">California Wildlife Center</a>
          or the 
         <a href="https://www.californiawildlifefoundation.org/donate/">California Wildlife Foundation</a>.
+        </p>
     </div>
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>

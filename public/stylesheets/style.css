@@ -1,4 +1,120 @@
-/* Nothing yet! */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin-bottom: 80px;
+}
+
+.pure-menu .pure-menu-horizontal {
+    width: 100%;
+    position: relative;
+}
+
+/* .pure-menu-heading {
+    width: 100%;
+    align-items: center;
+    position: relative;
+} */
+
+.pure-img {
+    float: none;
+    display: block;
+    background-color: white;
+    margin: 0 auto;
+    width: 250px;
+    height: 88px;
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    content: "";
+    margin-left: -125px;
+
+}
+
+.nav-wrapper {
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.pure-menu-list {
+    width: 80%;
+    position: absolute;
+    background-color: #ffffff;
+    margin-top: 90px;
+    display: flex !important; /* needed to overwrite pure-min.css */
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-width: 1px 0;
+
+}
+
+.pure-menu-item {
+    display: block;
+    float: left;
+}
+
+.pure-menu-link {
+    display: flex;
+    float: none;
+    color: #2B3A00;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.hero {
+    padding: 20px 35px;
+    background-image: url('../images/hero.png');
+    background-position: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    top: 80px;
+    background-size: cover;
+    margin-top: 125px;
+}
+
+main {
+    padding: 30px;
+}
+
+.dashboard-container {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.dashboard-container div {
+    display: table-cell;
+    text-align: left;
+    width: 50%;
+    padding: 1rem;
+}
+
+.dashboard-container .left-column {
+    text-align: center;
+    align-items: center;
+}
+
+.dashboard-container .right-column {
+    background-color: #eeeeee;
+}
+
+div .centered {
+    align-items: center;
+    text-align: center;
+}
+
+select .centered {
+    align-items: center;
+    text-align: center;
+}
 
 .footer {
     background: #111;
@@ -6,11 +122,16 @@
     bottom: 0;
     width: 100%;
     color: white;
-    padding: 20px
+    padding: 5px;
+    height: 80px;
 }
 
 .footer-off-set {
-    padding: 30px;
+    padding: 10px;
+}
+
+.footer p {
+    text-align: center;
 }
 
 .style-list {
