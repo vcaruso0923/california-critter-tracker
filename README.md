@@ -13,10 +13,16 @@ A website for the public to post sightings of animals in a certain county in Cal
 * [Questions](#questions)
 
 ## INSTALLATION
-Link to web application.
+[Link](https://pure-scrubland-55089.herokuapp.com/) to web application.
 
 ## USAGE
-TBA
+* use the [link](https://pure-scrubland-55089.herokuapp.com/) to enter site
+* new users can create a login
+* when you spot an animal, you can post the sighting by species and county
+* you can search county to get collection of animals sighted
+* you can search a single animal to see spread of population
+* you can search both
+
 
 ## TECHNOLOGIES
 Packages used:
@@ -26,10 +32,10 @@ Packages used:
 * express-handlebars
 * express-session
 * mysql
-* sequelize
 
 Libraries used:
-* 
+* pure css
+* sequelize
 
 Languages:
 * HTML
@@ -41,4 +47,4 @@ Accords to __MIT__ licensing.
 >&copy; 2020 by ASTV
 
 ## QUESTIONS
-For further inquiries, connect with [franamaus](https://github.com/franamaus) or write to [theresanguyen.vmt@gmail.com](mailto:theresanguyen.vmt@gmail.com).
+For further inquiries, connect with [vcaruso](https://github.com/vcaruso0923), [sagatto](https://github.com/sagatto) or [franamaus](https://github.com/franamaus).
