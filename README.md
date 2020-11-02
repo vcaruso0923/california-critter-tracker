@@ -13,6 +13,8 @@ A website for the public to post sightings of animals in a certain county in Cal
 * [Questions](#questions)
 
 ## INSTALLATION
+Clone the repository. Run 'npm i' to install all dependencies. Run 'npm start' to start the server locally.
+
 [Link](https://pure-scrubland-55089.herokuapp.com/) to web application.
 
 ## USAGE
