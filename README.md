@@ -12,6 +12,8 @@ A website for the public to post sightings of animals in a certain county in Cal
 * [License](#license)
 * [Questions](#questions)
 
+![crittertracker](https://user-images.githubusercontent.com/62676730/100019498-00b16400-2d93-11eb-9e86-1eca51a7ebdf.PNG)
+
 ## INSTALLATION
 Clone the repository. Run 'npm i' to install all dependencies. Run 'npm start' to start the server locally.
 
